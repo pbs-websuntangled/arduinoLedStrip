@@ -4,7 +4,7 @@
  * 
  */
 
-#define NUMPIXELS 60 // Number of LEDs in strip
+#define NUMPIXELS 38 // Number of LEDs in strip
 
 #include <Adafruit_DotStar.h>
 // Because conditional #includes don't work w/Arduino sketches...
@@ -26,9 +26,9 @@ Adafruit_DotStar strip = Adafruit_DotStar(
 // (Arduino Uno = pin 11 for data, 13 for clock, other boards are different).
 //Adafruit_DotStar strip = Adafruit_DotStar(NUMPIXELS, DOTSTAR_BRG);
 
-Flasher flasher01("flasher01", 10, 240, 0x111111); // name, length, speed, colour
-Flasher flasher02("flasher02", 1, 50, 0x001100); // name, length, speed, colour
-Flasher flasher03("flasher03", 1, 60, 0x000011); // name, length, speed, colour
+// Flasher flasher01("flasher01", 10, 240, 0x111111); // name, length, speed, colour
+// Flasher flasher02("flasher02", 1, 50, 0x001100); // name, length, speed, colour
+// Flasher flasher03("flasher03", 1, 60, 0x000011); // name, length, speed, colour
 Flasher flasher04("flasher04", 1, 70, 0x111100); // name, length, speed, colour
 Flasher flasher05("flasher05", 1, 80, 0x001111); // name, length, speed, colour
 Flasher flasher06("flasher06", 3, 200, 0x110011); // name, length, speed, colour
@@ -39,7 +39,7 @@ void setup() {
   Serial.begin(250000);
   delay(1000);
   Serial.println("Hi There. dotStar06");
-  Serial.println(flasher01.getFlashTailPosition());
+//  Serial.println(flasher01.getFlashTailPosition());
   
   strip.begin(); // Initialize pins for output
   strip.show();  // Turn all LEDs off ASAP
@@ -51,13 +51,13 @@ void setup() {
 
 void loop() {
  
-  flasher01.moveFlasher(); //Move the object
-  flasher02.moveFlasher(); //Move the object
-  flasher03.moveFlasher(); //Move the object  
-  flasher04.moveFlasher(); //Move the object  
-  flasher05.moveFlasher(); //Move the object
+// flasher01.moveFlasher(); //Move the object
+//  flasher02.moveFlasher(); //Move the object
+//  flasher03.moveFlasher(); //Move the object  
   flasher06.moveFlasher(); //Move the object
   flasher07.moveFlasher(); //Move the object
+  flasher04.moveFlasher(); //Move the object  
+  flasher05.moveFlasher(); //Move the object
   strip.show();                     // Refresh strip
 
 
